@@ -6,6 +6,10 @@ const { networkInterfaces } = require('os');
 
 const app = express();
 app.use(cors());
+
+app.get("/",(req,res)=>{
+  console.log("working")
+})
  
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
