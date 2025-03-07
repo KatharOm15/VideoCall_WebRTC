@@ -19,7 +19,7 @@ export default function VideoCall() {
   useEffect(() => {
     // Initialize WebSocket connection
    
-    websocket.current = new WebSocket('ws://localhost:5000');
+    websocket.current = new WebSocket('https://videocall-webrtc-2k3i.onrender.com');
 
     websocket.current.onmessage = async (event) => {
       const data = JSON.parse(event.data);

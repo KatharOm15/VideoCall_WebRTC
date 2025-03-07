@@ -10,6 +10,10 @@ app.use(cors());
 app.get("/",(req,res)=>{
   console.log("working")
 })
+
+app.listen(5001,()=>{
+  console.log("running")
+})
  
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
@@ -79,7 +83,7 @@ wss.on('connection', (ws) => {
           if (roomHosts.get(data.room) === userId) {
             ws.send(JSON.stringify({
               type: 'meeting-link',
-              link: `http://${getLocalIP()}:${PORT}/join/${data.room}`
+              link: `http://localhost:${PORT}/join/${data.room}`
             }));
           }
 
